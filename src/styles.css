@@ -1,0 +1,105 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden
+}
+
+body {
+    background-image: url(images/HERO_Photo_-Bob-Croslin_Studio-Session-260.webp);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: white;
+    font-family: "DynaPuff", sans-serif;
+  } 
+
+header {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100px;
+}
+
+nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+nav button:nth-child(2) {
+  margin-left:10px ;
+  margin-right:10px ;
+}
+
+button {
+  font-family: "Oxygen", sans-serif;
+  font-size: 100%;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+ .summary {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  margin: 0px;
+ }
+
+ .dish {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-items: center;
+ }
+
+ .dish img {
+  max-width: 100%; /* Prevent images from overflowing */
+  height: auto; /* Maintain aspect ratio */
+}
+
+ .dish-name-image, .description-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .dish-name-image {
+  margin-right: 15px;
+ }
+ 
+ .contact-cont {
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 300px;
+  margin-left: 300px;
+ }
