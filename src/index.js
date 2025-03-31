@@ -53,6 +53,13 @@ class LinkedList {
         }    
         return count
     }
+    // returns first node of the list
+    firstNode () {
+        if(this.head === null) {
+            return null
+        }
+        else return this.head.value
+    }
 }
 
 // create Node class
@@ -71,3 +78,4 @@ list.prepend(50)
 list.size()
 console.log(JSON.stringify(list, null, 2) );
 console.log(`size of the linked list is: ${list.size()}`)
+console.log(`the first node of the linked list is: ${list.firstNode()}`)
