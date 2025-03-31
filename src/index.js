@@ -60,6 +60,19 @@ class LinkedList {
         }
         else return this.head.value
     }
+    // returns last node of the list
+    last () {
+        if(this.head === null) {
+            return null
+        }
+
+        let current = this.head 
+        while(current.nextNode !== null) {
+            current = current.nextNode
+        
+        }
+        return current.value
+    }
 }
 
 // create Node class
@@ -79,3 +92,4 @@ list.size()
 console.log(JSON.stringify(list, null, 2) );
 console.log(`size of the linked list is: ${list.size()}`)
 console.log(`the first node of the linked list is: ${list.firstNode()}`)
+console.log(`the last node of the linked list is: ${list.last()}`)
