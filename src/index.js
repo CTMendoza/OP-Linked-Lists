@@ -37,10 +37,24 @@ class LinkedList {
             this.head = newNode
             return
         }
-
-
+    }
+    
+    //returns the total number of nodes in the linked list
+    size() {
+        let count = 0
+        let current = this.head
+        if(this.head === null) {
+            return count
+        }
+        
+        while(current !== null) {
+            count++
+            current = current.nextNode
+        }    
+        return count
     }
 }
+
 // create Node class
 class Node {
     constructor(value = null, nextNode = null) {
@@ -53,6 +67,7 @@ const list = new LinkedList();
 list.append(10)
 list.append(20)
 list.append(30)
-list.prepend(40)
 list.prepend(50)
-console.log(JSON.stringify(list, null, 2));
+list.size()
+console.log(JSON.stringify(list, null, 2) );
+console.log(`size of the linked list is: ${list.size()}`)
