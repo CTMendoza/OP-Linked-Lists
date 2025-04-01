@@ -53,6 +53,7 @@ class LinkedList {
         }    
         return count
     }
+
     // returns first node of the list
     firstNode () {
         if(this.head === null) {
@@ -73,6 +74,21 @@ class LinkedList {
         }
         return current.value
     }
+
+    //returns node at given index
+    at(index) {
+        if(this.head === null || index < 0 || index >= this.size() ) {
+            return null
+        }
+        
+        let count = 0
+        let current = this.head
+        while(count < index) {
+            current = current.nextNode
+            count++
+        }
+        return current
+    }
 }
 
 // create Node class
@@ -88,8 +104,8 @@ list.append(10)
 list.append(20)
 list.append(30)
 list.prepend(50)
-list.size()
 console.log(JSON.stringify(list, null, 2) );
 console.log(`size of the linked list is: ${list.size()}`)
 console.log(`the first node of the linked list is: ${list.firstNode()}`)
 console.log(`the last node of the linked list is: ${list.last()}`)
+console.log('the node value  at selected index is: ', list.at(2))
