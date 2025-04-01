@@ -95,13 +95,26 @@ class LinkedList {
         if(this.head.nextNode === null) {
              this.head = null
         }
-
         let current = this.head
         while(current.nextNode.nextNode !== null) {
             current = current.nextNode
         }
-        
         current.nextNode = null
+    }
+
+    //returns true if the passed in value is in the list and otherwise returns false.
+    contains(value) {
+        if(this.head === null) {
+            return false
+        }
+        let current = this.head
+        while(current !== null) {
+            if(current.value === value) {
+                return true
+            }
+            current = current.nextNode
+        }
+        return false
     }
 }
 
@@ -129,3 +142,4 @@ console.log(`size of the linked list is: ${list.size()}`)
 console.log('the first node of the linked list is: ', JSON.stringify(list.firstNode(), null, 2)  )
 console.log('the last node of the linked list is: ', JSON.stringify(list.last(), null, 2) )
 console.log('the node value  at selected index is: ', JSON.stringify(list.at(2), null, 2))
+console.log('Is the passed value inside the linked list: ', list.contains(22))
