@@ -59,7 +59,7 @@ class LinkedList {
         if(this.head === null) {
             return null
         }
-        else return this.head.value
+        else return this.head
     }
     // returns last node of the list
     last () {
@@ -72,7 +72,7 @@ class LinkedList {
             current = current.nextNode
         
         }
-        return current.value
+        return current
     }
 
     //returns node at given index
@@ -88,6 +88,20 @@ class LinkedList {
             count++
         }
         return current
+    }
+
+    //removes last node in the list
+    pop() {
+        if(this.head.nextNode === null) {
+             this.head = null
+        }
+
+        let current = this.head
+        while(current.nextNode.nextNode !== null) {
+            current = current.nextNode
+        }
+        
+        current.nextNode = null
     }
 }
 
@@ -106,6 +120,12 @@ list.append(30)
 list.prepend(50)
 console.log(JSON.stringify(list, null, 2) );
 console.log(`size of the linked list is: ${list.size()}`)
-console.log(`the first node of the linked list is: ${list.firstNode()}`)
-console.log(`the last node of the linked list is: ${list.last()}`)
-console.log('the node value  at selected index is: ', list.at(2))
+console.log('the first node of the linked list is: ', JSON.stringify(list.firstNode(), null, 2)  )
+console.log('the last node of the linked list is: ', JSON.stringify(list.last(), null, 2) )
+console.log('the node value  at selected index is: ', JSON.stringify(list.at(2), null, 2))
+list.pop()
+console.log(JSON.stringify(list, null, 2) );
+console.log(`size of the linked list is: ${list.size()}`)
+console.log('the first node of the linked list is: ', JSON.stringify(list.firstNode(), null, 2)  )
+console.log('the last node of the linked list is: ', JSON.stringify(list.last(), null, 2) )
+console.log('the node value  at selected index is: ', JSON.stringify(list.at(2), null, 2))
