@@ -116,6 +116,40 @@ class LinkedList {
         }
         return false
     }
+    // returns the index of the node containing value, or null if not found.
+        find(value) {
+            let current = this.head
+            let index = 0
+            if(current === null) {
+                return null
+            }
+
+            while(current !== null) {
+                if(current.value === value) {
+                    return index
+                }
+                else {
+                    current = current.nextNode
+                    index++
+                }
+            }
+            return null
+        }
+
+        // represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+        toString() {
+            let current = this.head
+            let listString = ''
+            if(current === null) {
+                return null
+            }
+
+            while(current !== null) {
+                listString = listString + `(${current.value}) -> `
+                current = current.nextNode
+            }
+            return listString + '(null)'
+        }
 }
 
 // create Node class
@@ -143,3 +177,5 @@ console.log('the first node of the linked list is: ', JSON.stringify(list.firstN
 console.log('the last node of the linked list is: ', JSON.stringify(list.last(), null, 2) )
 console.log('the node value  at selected index is: ', JSON.stringify(list.at(2), null, 2))
 console.log('Is the passed value inside the linked list: ', list.contains(22))
+console.log('The index of the passed value is ', list.find(10))
+console.log(list.toString())
